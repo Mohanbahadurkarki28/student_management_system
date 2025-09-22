@@ -72,7 +72,8 @@ def add_student(request):
             admission_number = admission_number,
             section = section,
             parent = parent,
-            slug=unique_slug
+            slug=unique_slug,
+            student_image=student_image
         )
         create_notification(request.user, f"Added Student: {student.first_name} {student.last_name}")
         messages.success(request, "Student added Successfully")

@@ -49,7 +49,7 @@
                                             <div class="table-avatar">
                                                 <a href="{% url 'view_student' student.student_id %}" class="avatar avatar-sm mr-2">
                                                     <img class="avatar-img rounded-circle"
-                                                         src="{% if student.student_image %}{{ student.student_image.url }}{% else %}{% static 'assets/img/profiles/default-avatar.png' %}{% endif %}"
+                                                         src="{% if student.student_image %}{{ student.student_image.url }}{% else %}{% static 'assets/img/profiles/default-avatar.jpg' %}{% endif %}"
                                                          alt="User Image">
                                                 </a>
                                                 <a href="{% url 'view_student' student.student_id %}">

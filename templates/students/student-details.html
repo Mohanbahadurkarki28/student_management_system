@@ -24,7 +24,13 @@
 <div class="about-info">
 <h4>About Me</h4>
 <div class="media mt-3">
-<img src="{{student.student_image.url}}" class="mr-3" alt="...">
+  {% if student.student_image %}
+    <img src="{{ student.student_image.url }}" class="mr-3" alt="Student Image">
+  {% else %}
+    <img src="{% static 'assets/img/profiles/default-avatar.jpg' %}" class="mr-3" alt="Default Avatar">
+  {% endif %}
+</div>
+
 <div class="media-body">
 <ul>
 <li>
@@ -41,8 +47,15 @@
 </li>
 <li>
 <span class="title-span">Email : </span>
-<span class="info-span"><a href="{{student.parent.father_email}}" class="__cf_email__" data-cfemail="7216131b010b32151f131b1e5c111d1f">[email&#160;protected]</a></span>
-</li>
+<span class="info-span">
+<a href="mailto:{{ student.parent.father_email }}">
+    {{ student.parent.father_email }}
+</a>
+
+
+
+</span>
+
 <li>
 <span class="title-span">Gender : </span>
 <span class="info-span">{{student.gender}}</span>
@@ -191,14 +204,12 @@
 </div>
 
 
-<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{%static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
 
-<script src="{%static 'assets/js/popper.min.js' %}"></script>
-<script src="{%static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-
-<script src="{%static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
-
-<script src="{%static 'assets/js/script.js' %}"></script>
 </body>
 
 </html>
